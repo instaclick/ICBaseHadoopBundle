@@ -26,5 +26,31 @@ class ICBaseHadoopExtension extends Extension
         $loader        = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
 
         $loader->load('services.xml');
+
+        $this->initializeHadoop($config['hadoop'], $container);
+    }
+
+    /**
+     * Initialize Hadoop configuration.
+     *
+     * @param array                                                   $config    Configuration
+     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container Container builder
+     */
+    private function initializeHadoop(array $config, ContainerBuilder $container)
+    {
+        $container->setParameter(
+            'ic_base_hadoop.hadoop.host',
+            $config['host']
+        );
+
+        $container->setParameter(
+            'ic_base_hadoop.hadoop.port',
+            $config['port']
+        );
+
+        $container->setParameter(
+            'ic_base_hadoop.hadoop.path',
+            $config['path']
+        );
     }
 }

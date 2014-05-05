@@ -50,7 +50,7 @@ class ICBaseHadoopExtensionTest extends ExtensionTestCase
                     'hadoop' => array(
                         'host' => 'hadoop.host',
                         'port' => 'hadoop.port',
-                        'path' => 'hadoop.password',
+                        'path' => 'hadoop.path',
                     ),
                 ),
             ),
