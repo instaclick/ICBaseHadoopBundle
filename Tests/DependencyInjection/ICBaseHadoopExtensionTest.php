@@ -32,9 +32,9 @@ class ICBaseHadoopExtensionTest extends ExtensionTestCase
 
         $this->load($loader, $config);
 
-        $this->assertParameter('hadoop.host', 'ic_base_hadoop.hadoop.host');
-        $this->assertParameter('hadoop.port', 'ic_base_hadoop.hadoop.port');
-        $this->assertParameter('hadoop.path', 'ic_base_hadoop.hadoop.path');
+        $this->assertParameter('hadoop.host', 'ic_base_hadoop.hdfs.host');
+        $this->assertParameter('hadoop.port', 'ic_base_hadoop.hdfs.port');
+        $this->assertParameter('hadoop.path', 'ic_base_hadoop.hdfs.path');
     }
 
     /**

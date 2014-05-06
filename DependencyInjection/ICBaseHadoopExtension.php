@@ -39,17 +39,17 @@ class ICBaseHadoopExtension extends Extension
     private function initializeHadoop(array $config, ContainerBuilder $container)
     {
         $container->setParameter(
-            'ic_base_hadoop.hadoop.host',
+            'ic_base_hadoop.hdfs.host',
             $config['host']
         );
 
         $container->setParameter(
-            'ic_base_hadoop.hadoop.port',
+            'ic_base_hadoop.hdfs.port',
             $config['port']
         );
 
         $container->setParameter(
-            'ic_base_hadoop.hadoop.path',
+            'ic_base_hadoop.hdfs.path',
             $config['path']
         );
     }
