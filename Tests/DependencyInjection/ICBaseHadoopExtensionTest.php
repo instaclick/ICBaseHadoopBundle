@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2013 Instaclick Inc.
+ * @copyright 2014 Instaclick Inc.
  */
 
 namespace IC\Bundle\Base\HadoopBundle\Tests\DependencyInjection;

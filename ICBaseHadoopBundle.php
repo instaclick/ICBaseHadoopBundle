@@ -1,4 +1,7 @@
 <?php
+/**
+ * @copyright 2014 Instaclick Inc.
+ */
 
 namespace IC\Bundle\Base\HadoopBundle;
 

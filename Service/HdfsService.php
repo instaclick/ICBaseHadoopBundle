@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2012 Instaclick Inc.
+ * @copyright 2014 Instaclick Inc.
  */
 
 namespace IC\Bundle\Base\HadoopBundle\Service;
