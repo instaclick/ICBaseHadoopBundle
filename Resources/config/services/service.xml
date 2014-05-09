@@ -4,11 +4,23 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="ic_base_hadoop.xxx.xxx" class="IC\Bundle\Base\HadoopBundle\Service\XxxXxxService">
-            <call method="setXxx">
-                <argument type="service" id="ic_base_hadoop.xxx.xxx" />
+        <service id="ic_base_hadoop.service.hdfs" class="IC\Bundle\Base\HadoopBundle\Service\HdfsService">
+            <call method="setClient">
+                <argument type="service" id="ic_base_hadoop.service.client"/>
+            </call>
+            <call method="setHost">
+                <argument type="string">%ic_base_hadoop.hdfs.host%</argument>
+            </call>
+            <call method="setPort">
+                <argument type="string">%ic_base_hadoop.hdfs.port%</argument>
+            </call>
+            <call method="setPath">
+                <argument type="string">%ic_base_hadoop.hdfs.path%</argument>
             </call>
         </service>
+
+        <service id="ic_base_hadoop.service.client" class="Guzzle\Http\Client" />
+
     </services>
 
 </container>
