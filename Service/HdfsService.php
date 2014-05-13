@@ -118,6 +118,32 @@ class HdfsService
     /**
      * Send curl request
      *
+     * @param null|string $path
+     * @param null|string $content
+     *
+     * @return \Guzzle\Http\Message\Response
+     */
+    public function append($path = null, $content = null)
+    {
+        $requestDataNode = $this->prepareRequest("append", $path);
+        $requestDataNode->getParams()->set('redirect.disable', true);
+
+        $response   = $requestDataNode->send();
+        $headerList = $response->getHeaders();
+
+        $requestAppendFile = $this->client->createRequest(
+            "POST",
+            (string) $headerList['location'],
+            array('Content-type' => 'application/octet-stream'),
+            $content
+        );
+
+        return $requestAppendFile->send();
+    }
+
+    /**
+     * Send curl request
+     *
      * @param string $path
      *
      * @return \Guzzle\Http\Message\Response
@@ -227,6 +253,7 @@ class HdfsService
         $methodList = array(
             'listStatus' => 'GET',
             'create' => 'PUT',
+            'append' => 'POST',
             'mkdirs' => 'PUT',
             'open' => 'GET',
             'rename' => 'PUT',
