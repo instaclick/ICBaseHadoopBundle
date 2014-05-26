@@ -252,12 +252,12 @@ class HdfsService
     {
         $methodList = array(
             'listStatus' => 'GET',
-            'create' => 'PUT',
-            'append' => 'POST',
-            'mkdirs' => 'PUT',
-            'open' => 'GET',
-            'rename' => 'PUT',
-            'delete' => 'DELETE',
+            'create'     => 'PUT',
+            'append'     => 'POST',
+            'mkdirs'     => 'PUT',
+            'open'       => 'GET',
+            'rename'     => 'PUT',
+            'delete'     => 'DELETE',
         );
 
         return isset($methodList[$requestType]) ? $methodList[$requestType] : null;
