@@ -8,6 +8,9 @@
             <call method="setClient">
                 <argument type="service" id="ic_base_hadoop.service.client"/>
             </call>
+            <call method="setUsername">
+                <argument type="string">%ic_base_hadoop.hdfs.username%</argument>
+            </call>
             <call method="setHost">
                 <argument type="string">%ic_base_hadoop.hdfs.host%</argument>
             </call>
@@ -19,7 +22,7 @@
             </call>
         </service>
 
-        <service id="ic_base_hadoop.service.client" class="Guzzle\Http\Client" />
+        <service id="ic_base_hadoop.service.client" class="Guzzle\Http\Client" public="false" />
 
     </services>
 

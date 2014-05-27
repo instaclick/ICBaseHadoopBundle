@@ -55,5 +55,9 @@ class ICBaseHadoopExtension extends Extension
             'ic_base_hadoop.hdfs.path',
             $config['path']
         );
+        $container->setParameter(
+            'ic_base_hadoop.hdfs.username',
+            $config['username']
+        );
     }
 }

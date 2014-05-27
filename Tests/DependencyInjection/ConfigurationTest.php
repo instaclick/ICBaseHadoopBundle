@@ -30,6 +30,7 @@ class ConfigurationTest extends ConfigurationTestCase
         $this->assertEquals('hadoop.host', $configuration['hadoop']['host']);
         $this->assertEquals('hadoop.port', $configuration['hadoop']['port']);
         $this->assertEquals('hadoop.path', $configuration['hadoop']['path']);
+        $this->assertEquals('hadoop.username', $configuration['hadoop']['username']);
     }
 
     /**
@@ -42,9 +43,10 @@ class ConfigurationTest extends ConfigurationTestCase
         return array(
             array(
                 'hadoop' => array(
-                    'host' => 'hadoop.host',
-                    'port' => 'hadoop.port',
-                    'path' => 'hadoop.path',
+                    'host'     => 'hadoop.host',
+                    'port'     => 'hadoop.port',
+                    'path'     => 'hadoop.path',
+                    'username' => 'hadoop.username',
                 ),
             ),
         );

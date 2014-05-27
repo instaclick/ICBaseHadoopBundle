@@ -35,6 +35,7 @@ class ICBaseHadoopExtensionTest extends ExtensionTestCase
         $this->assertParameter('hadoop.host', 'ic_base_hadoop.hdfs.host');
         $this->assertParameter('hadoop.port', 'ic_base_hadoop.hdfs.port');
         $this->assertParameter('hadoop.path', 'ic_base_hadoop.hdfs.path');
+        $this->assertParameter('hadoop.username', 'ic_base_hadoop.hdfs.username');
     }
 
     /**
@@ -48,9 +49,10 @@ class ICBaseHadoopExtensionTest extends ExtensionTestCase
             array(
                 array(
                     'hadoop' => array(
-                        'host' => 'hadoop.host',
-                        'port' => 'hadoop.port',
-                        'path' => 'hadoop.path',
+                        'host'     => 'hadoop.host',
+                        'port'     => 'hadoop.port',
+                        'path'     => 'hadoop.path',
+                        'username' => 'hadoop.username',
                     ),
                 ),
             ),

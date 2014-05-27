@@ -36,6 +36,21 @@ class HdfsService
     private $path;
 
     /**
+     * @var string
+     */
+    private $username;
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
+    /**
      * Set client
      *
      * @param \Guzzle\Http\Client $client
@@ -214,7 +229,7 @@ class HdfsService
         $query   = $request->getQuery();
 
         $query->set('op', strtoupper($requestType));
-        $query->set('user.name', 'babu');
+        $query->set('user.name', $this->getUsername());
 
         foreach ($optionList as $optionKey => $optionValue) {
             $query->set($optionKey, $optionValue);
@@ -261,5 +276,15 @@ class HdfsService
         );
 
         return isset($methodList[$requestType]) ? $methodList[$requestType] : null;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
     }
 }
